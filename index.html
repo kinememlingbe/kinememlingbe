@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kine Memling - Rebecca Taillieu</title>
+    <style>
+        /* --- 1. Define Colors & Fonts --- */
+        :root {
+            --bg-beige: #FFF1E0;     /* The main page background color */
+            --box-border: #1B1537;   /* The dark navy blue */
+            --text-navy: #1B1537;
+            --font-main: 'Times New Roman', Times, serif; /* Classic Serif font */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--bg-beige);
+            font-family: var(--font-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- 2. The Main Logo Wrapper --- */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Aligns "Rebecca Taillieu" to the right */
+            width: fit-content;
+        }
+
+        /* --- 3. The Rectangular Box --- */
+        .logo-box {
+            display: flex;
+            border: 3px solid var(--box-border);
+            /* Ensure the text stays on one line */
+            white-space: nowrap; 
+        }
+
+        /* --- 4. Left Side (Dark Box) --- */
+        .box-left {
+            background-color: var(--box-border); /* Solid navy fill */
+            color: var(--bg-beige); /* Beige text */
+            padding: 15px 30px;
+            font-size: 3rem; /* Adjust size here */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- 5. Right Side (Light Box) --- */
+        .box-right {
+            background-color: transparent;
+            color: var(--text-navy); /* Navy text */
+            padding: 15px 30px;
+            font-size: 3rem; /* Same size as left */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- 6. Subtitle (Name) --- */
+        .subtitle {
+            margin-top: 10px;
+            color: var(--text-navy);
+            font-size: 1.2rem;
+        }
+        
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 600px) {
+            .box-left, .box-right {
+                font-size: 1.8rem; /* Smaller text on phones */
+                padding: 10px 20px;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="logo-box">
+            <div class="box-left">KINE</div>
+            <div class="box-right">MEMLING</div>
+        </div>
+        
+        <div class="subtitle">Rebecca Taillieu</div>
+    </div>
+
+</body>
+</html>
