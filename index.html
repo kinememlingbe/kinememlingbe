@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kine Memling: Kinesitherapie en fasciatherapie met Rebecca Taillieu</title>
 <meta name="description" content="Kine Memling – Rebecca Taillieu, kinesitherapeute (kine) in Overijse, vlak bij Brussel. Fasciatherapie, begeleiding tijdens de zwangerschap en algemene kinesitherapie.">
-<meta name="keywords" content="kine, kiné, kinesitherapie, kinésithérapie, kinesitherapeut, kinésithérapeute, physiotherapy, fasciatherapie, fasciathérapie, fasciatherapy, fascia, Overijse, Brussel, Bruxelles, Brussels, zwangerschap, grossesse, Rebecca Taillieu, Kine Memling">
+<meta name="keywords" content="kine, kiné, kinesitherapie, kinésithérapie, kinesitherapeut, kinésithérapeute, physiotherapy, fasciatherapie, fasciathérapie, fasciatherapy, fasciaterapia, fisioterapia, fascia, cardiorespiratoire kinesitherapie, kiné cardio-respiratoire, Overijse, Brussel, Bruxelles, Brussels, zwangerschap, grossesse, Rebecca Taillieu, Kine Memling">
 <meta name="author" content="Rebecca Taillieu">
 <link rel="canonical" href="https://kinememling.be/">
 <meta property="og:type" content="website">
@@ -17,6 +17,7 @@
 <meta property="og:locale" content="nl_BE">
 <meta property="og:locale:alternate" content="fr_BE">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="pt_PT">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,6 +26,7 @@
   "url": "https://kinememling.be/",
   "image": "https://kinememling.be/images/hero-pregnancy.jpg",
   "email": "rebecca@kinememling.be",
+  "telephone": "+32 451 04 78 21",
   "description": "Kinesitherapie en fasciatherapie in Overijse, vlak bij Brussel.",
   "address": {
     "@type": "PostalAddress",
@@ -43,7 +45,7 @@
     "opens": "08:00",
     "closes": "20:00"
   }],
-  "availableLanguage": ["nl", "fr", "en"],
+  "availableLanguage": ["nl", "fr", "en", "pt"],
   "knowsAbout": ["Kinesitherapie", "Fasciatherapie", "Fasciathérapie", "Physiotherapy", "Pregnancy and pelvic physiotherapy"],
   "employee": {
     "@type": "Person",
@@ -78,6 +80,8 @@
   .site-header { position: relative; z-index: 5; background: var(--cream); display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding: 20px 48px; }
   .nav { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
   .nav a { text-decoration: none; }
+  .nav-contacts { display: flex; flex-direction: column; gap: 4px; }
+  .nav .nav-contact { display: inline-flex; align-items: center; gap: 6px; text-transform: none; letter-spacing: 0; font-size: 0.95rem; }
 
   /* Language menu */
   .lang-menu { position: relative; }
@@ -109,6 +113,8 @@
   .cards { width: 100%; max-width: 1320px; display: grid; gap: 24px; list-style: none; margin: 0; padding: 0; }
   .card { display: flex; flex-direction: column; align-items: center; gap: 20px; }
   .card img { width: 100%; height: 440px; object-fit: cover; }
+  .photo-soon { width: 100%; height: 440px; display: flex; align-items: center; justify-content: center; text-align: center; background: repeating-linear-gradient(135deg,#2a2350,#2a2350 14px,#322a5e 14px,#322a5e 28px); letter-spacing: 1px; text-transform: uppercase; font-size: .9rem; }
+  @media (max-width: 700px) { .photo-soon { height: 400px; } }
   .pill { text-decoration: none; background: var(--cream); color: var(--navy); padding: 10px 22px; border-radius: 999px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
   .pill:hover { color: var(--navy); opacity: .9; }
   .card p { margin: 0; font-size: 1.05rem; line-height: 1.55; text-align: center; max-width: 320px; }
@@ -155,7 +161,10 @@
       <a href="#home" data-i18n="navHome">Home</a>
       <a href="#about" data-i18n="navAbout">Over Rebecca</a>
       <a href="#care" data-i18n="navCare">Behandelingen</a>
-      <a href="#contact" data-i18n="navContact">Contact</a>
+      <div class="nav-contacts">
+      <a class="nav-contact" href="mailto:rebecca@kinememling.be"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>rebecca@kinememling.be</span></a>
+      <a class="nav-contact" href="tel:+32451047821"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span>+32 451 04 78 21</span></a>
+      </div>
       <div class="lang-menu">
         <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list" data-i18n-label="langLabel" aria-label="Taal">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
@@ -166,6 +175,7 @@
           <li role="none"><button type="button" role="menuitemradio" data-lang="nl" lang="nl" aria-checked="true">Nederlands</button></li>
           <li role="none"><button type="button" role="menuitemradio" data-lang="fr" lang="fr" aria-checked="false">Français</button></li>
           <li role="none"><button type="button" role="menuitemradio" data-lang="en" lang="en" aria-checked="false">English</button></li>
+          <li role="none"><button type="button" role="menuitemradio" data-lang="pt" lang="pt" aria-checked="false">Português</button></li>
         </ul>
       </div>
     </nav>
@@ -176,15 +186,15 @@
       <img src="images/hero-pregnancy.jpg" width="2000" height="1333" data-i18n-alt="altHero" alt="Rebecca legt haar handen op de buik van een zwangere patiënte" fetchpriority="high">
       <div class="hero-card">
         <h1 data-i18n="heroTitle">Maak kennis met Rebecca</h1>
-        <div class="hero-role" data-i18n="heroRole">Kinesitherapeute | In specialisatie fasciatherapie</div>
+        <div class="hero-role" data-i18n="heroRole">Kinesitherapeute | Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
         <p class="hero-lede" data-i18n="heroLede">Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.</p>
-        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="tel:+32451047821" data-i18n="cta">Maak een afspraak</a>
       </div>
       <svg class="wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C220,190 470,175 720,120 C980,62 1210,20 1440,48 L1440,180 L0,180 Z" fill="#1B1537"/></svg>
     </section>
 
     <section id="care" class="care" aria-labelledby="care-title">
-      <h2 id="care-title" data-i18n="careTitle">Waarvoor je bij Rebecca terechtkunt</h2>
+      <h2 id="care-title" data-i18n="careTitle">Waarmee ik je kan helpen</h2>
       <ul class="cards" id="cards"></ul>
       <div class="card-nav" id="card-nav" hidden>
         <button type="button" class="arrow" id="prev" data-i18n-label="prev" aria-label="Vorige">
@@ -201,10 +211,10 @@
       <img src="images/rebecca-portrait.jpg" width="800" height="1200" loading="lazy" data-i18n-alt="altPortrait" alt="Portret van Rebecca Taillieu in haar praktijk">
       <div class="about-text">
         <h2 id="about-title" data-i18n="aboutTitle">Over</h2>
-        <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Na mijn opleiding kinesitherapie aan de KU Leuven ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
+        <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Ik studeerde kinesitherapie aan de KU Leuven, waar ik me ook specialiseerde in cardiorespiratoire kinesitherapie. Daarna ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
         <p><span data-i18n="about2a">Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij </span><a href="https://fascia.be/" target="_blank" rel="noopener">Fascia College</a><span data-i18n="about2b">: een zachte en diepgaande manuele benadering.</span></p>
         <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.</p>
-        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="tel:+32451047821" data-i18n="cta">Maak een afspraak</a>
       </div>
     </section>
   </main>
@@ -216,6 +226,7 @@
         <span>Memlingdreef 51, 3090 Overijse</span>
         <span data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</span>
         <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
+        <a href="tel:+32451047821">+32 451 04 78 21</a>
       </address>
     </div>
     <div class="copyright">© Kine Memling · Rebecca Taillieu</div>
@@ -231,16 +242,21 @@
       description: 'Kine Memling – Rebecca Taillieu, kinesitherapeute (kine) in Overijse, vlak bij Brussel. Fasciatherapie, begeleiding tijdens de zwangerschap en algemene kinesitherapie.',
       navHome: 'Home', navAbout: 'Over Rebecca', navCare: 'Behandelingen', navContact: 'Contact', langLabel: 'Taal', mailSubject: 'Afspraak bij Kine Memling', prev: 'Vorige', next: 'Volgende',
       heroTitle: 'Maak kennis met Rebecca',
-      heroRole: 'Kinesitherapeute | In specialisatie fasciatherapie',
+      heroRole: 'Kinesitherapeute | Specialisaties: Fasciatherapie en Cardiorespiratoire',
       heroLede: 'Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.',
       cta: 'Maak een afspraak',
-      careTitle: 'Waarvoor je bij Rebecca terechtkunt',
+      careTitle: 'Waarmee ik je kan helpen',
       s1: 'Fasciatherapie', s2: 'Zwangerschap & bekken', s3: 'Algemene kinesitherapie',
       n1: 'Een zachte manuele therapie op het bindweefsel (fascia). Kan helpen bij aanhoudende spanning, pijn en stress.',
       n2: 'Begeleiding bij rug- en bekkenklachten tijdens de zwangerschap en bij het herstel na de bevalling.',
       n3: 'Voor pijn en blessures aan rug, nek, schouders, knieën en voeten, met behandeling en oefeningen op maat.',
+        s5: 'Cardiorespiratoire kinesitherapie',
+        n5: 'Voor adem- en hartklachten, zoals COPD, astma of herstel na een longontsteking of hartoperatie, met ademhalingsoefeningen en aangepaste training.',
+        photoSoon: 'Foto volgt',
+        altS5: 'Oefenhoek in de praktijk met stepbank, weerstandsbanden en ballen',
+        n4: 'Ook voor heup- en knieklachten, na een blessure of operatie, met oefeningen die je weer sterker en stabieler maken.',
       aboutTitle: 'Over',
-      about1: 'Mijn naam is Rebecca Taillieu. Na mijn opleiding kinesitherapie aan de KU Leuven ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.',
+      about1: 'Mijn naam is Rebecca Taillieu. Ik studeerde kinesitherapie aan de KU Leuven, waar ik me ook specialiseerde in cardiorespiratoire kinesitherapie. Daarna ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.',
       about2a: 'Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij ',
       about2b: ': een zachte en diepgaande manuele benadering.',
       about3: 'In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.',
@@ -257,16 +273,21 @@
       description: 'Kine Memling – Rebecca Taillieu, kinésithérapeute (kiné) à Overijse, près de Bruxelles. Fasciathérapie, accompagnement de la grossesse et kinésithérapie générale.',
       navHome: 'Accueil', navAbout: 'À propos', navCare: 'Soins', navContact: 'Contact', langLabel: 'Langue', mailSubject: 'Rendez-vous chez Kine Memling', prev: 'Précédent', next: 'Suivant',
       heroTitle: 'Rencontrez Rebecca',
-      heroRole: 'Kinésithérapeute | En spécialisation en fasciathérapie',
+      heroRole: 'Kinésithérapeute | Spécialisations : Fasciathérapie et Cardiorespiratoire',
       heroLede: 'Un accompagnement personnalisé dans un cabinet calme, avec le temps de vous écouter et de vous proposer un traitement adapté à vos besoins.',
       cta: 'Prendre rendez-vous',
-      careTitle: 'Comment Rebecca peut vous aider',
+      careTitle: 'Comment je peux vous aider',
       s1: 'Fasciathérapie', s2: 'Grossesse & bassin', s3: 'Kinésithérapie générale',
       n1: 'Une thérapie manuelle douce qui agit sur les fascias. Elle peut aider en cas de tensions, de douleurs persistantes et de stress.',
       n2: 'Un accompagnement des douleurs du dos et du bassin pendant la grossesse et pour la récupération après l’accouchement.',
       n3: 'Pour les douleurs et blessures du dos, de la nuque, des épaules, des genoux et des pieds, avec un traitement et des exercices sur mesure.',
+        s5: 'Kinésithérapie cardiorespiratoire',
+        n5: 'Pour les problèmes respiratoires et cardiaques, comme la BPCO, l’asthme ou la récupération après une pneumonie ou une opération cardiaque, avec des exercices respiratoires et un entraînement adapté.',
+        photoSoon: 'Photo à venir',
+        altS5: 'Coin d’exercices du cabinet avec step, bandes élastiques et balles',
+        n4: 'Aussi pour les plaintes de la hanche et du genou, après une blessure ou une opération, avec des exercices pour retrouver force et stabilité.',
       aboutTitle: 'À propos',
-      about1: 'Je m’appelle Rebecca Taillieu. Après mes études de kinésithérapie à la KU Leuven, j’ai commencé à travailler à l’hôpital psychiatrique Sint-Kamillus à Bierbeek, où j’exerce depuis six ans.',
+      about1: 'Je m’appelle Rebecca Taillieu. J’ai étudié la kinésithérapie à la KU Leuven, où je me suis aussi spécialisée en kinésithérapie cardiorespiratoire. J’ai ensuite commencé à travailler à l’hôpital psychiatrique Sint-Kamillus à Bierbeek, où j’exerce depuis six ans.',
       about2a: 'Pour aider encore mieux mes patients, je suis en parallèle la formation en fasciathérapie au ',
       about2b: ' : une approche manuelle douce et profonde.',
       about3: 'Dans mon cabinet, je réunis les deux. Je prends le temps de vous écouter et de comprendre l’origine de votre douleur, puis nous construisons ensemble un plan adapté à votre corps, à votre rythme et à vos objectifs, avec des exercices simples à refaire chez vous.',
@@ -283,16 +304,21 @@
       description: 'Kine Memling – Rebecca Taillieu, physiotherapist (kiné) in Overijse, near Brussels. Fasciatherapy, support during pregnancy and general physiotherapy.',
       navHome: 'Home', navAbout: 'About', navCare: 'Care', navContact: 'Contact', langLabel: 'Language', mailSubject: 'Appointment at Kine Memling', prev: 'Previous', next: 'Next',
       heroTitle: 'Meet Rebecca',
-      heroRole: 'Physiotherapist | Specialising in fasciatherapy',
+      heroRole: 'Physiotherapist | Specialisations: Fasciatherapy and Cardiorespiratory',
       heroLede: 'Personal care in a calm practice, with time to listen to you and propose a treatment that fits your needs.',
       cta: 'Book a session',
-      careTitle: 'How Rebecca can help',
+      careTitle: 'How I can help',
       s1: 'Fasciatherapy', s2: 'Pregnancy & pelvis', s3: 'General physiotherapy',
       n1: 'A gentle manual therapy that works on the connective tissue (fascia). It can help with lasting tension, pain and stress.',
       n2: 'Support for back and pelvic complaints during pregnancy and with recovery after giving birth.',
       n3: 'For pain and injuries in the back, neck, shoulders, knees and feet, with treatment and exercises tailored to you.',
+        s5: 'Cardiorespiratory physiotherapy',
+        n5: 'For breathing and heart conditions such as COPD, asthma, or recovery after pneumonia or heart surgery, with breathing exercises and tailored training.',
+        photoSoon: 'Photo coming soon',
+        altS5: 'Exercise corner in the practice with a step, resistance bands and balls',
+        n4: 'Also for hip and knee complaints, after an injury or surgery, with exercises to make you stronger and more stable again.',
       aboutTitle: 'About',
-      about1: 'My name is Rebecca Taillieu. After studying physiotherapy at KU Leuven, I started working at Sint-Kamillus psychiatric hospital in Bierbeek, where I have now been for six years.',
+      about1: 'My name is Rebecca Taillieu. I studied physiotherapy at KU Leuven, where I also specialised in cardiorespiratory physiotherapy. I then started working at Sint-Kamillus psychiatric hospital in Bierbeek, where I have now been for six years.',
       about2a: 'To help my patients even better, I am also training in fasciatherapy at ',
       about2b: ': a gentle and in-depth manual approach.',
       about3: 'In my practice I bring the two together. I take the time to listen and to understand where your pain comes from, and together we build a plan that suits your body, your pace and your goals, with practical exercises you can also do at home.',
@@ -303,6 +329,46 @@
       altS3: 'Rebecca treating a patient’s knee and hip',
       altS3b: 'Rebecca treating a patient’s foot',
       altPortrait: 'Portrait of Rebecca Taillieu in her practice'
+    },
+    pt: {
+      title: 'Kine Memling: Fisioterapia e fasciaterapia com Rebecca Taillieu',
+      description: 'Kine Memling – Rebecca Taillieu, fisioterapeuta em Overijse, perto de Bruxelas. Fasciaterapia, fisioterapia cardiorrespiratória, acompanhamento na gravidez e fisioterapia geral.',
+      navHome: 'Início',
+      navAbout: 'Sobre',
+      navCare: 'Tratamentos',
+      navContact: 'Contacto',
+      langLabel: 'Idioma',
+      mailSubject: 'Consulta na Kine Memling',
+      prev: 'Anterior',
+      next: 'Seguinte',
+      heroTitle: 'Conheça a Rebecca',
+      heroRole: 'Fisioterapeuta | Especializações: Fasciaterapia e Cardiorrespiratória',
+      heroLede: 'Um acompanhamento personalizado num consultório tranquilo, com tempo para ouvir e propor um tratamento adaptado às suas necessidades.',
+      cta: 'Marcar consulta',
+      careTitle: 'Como posso ajudar',
+      s1: 'Fasciaterapia',
+      s2: 'Gravidez & pélvis',
+      s3: 'Fisioterapia geral',
+      s5: 'Fisioterapia cardiorrespiratória',
+      n1: 'Uma terapia manual suave que atua sobre o tecido conjuntivo (fáscia). Pode ajudar em caso de tensão persistente, dor e stress.',
+      n2: 'Acompanhamento de queixas lombares e pélvicas durante a gravidez e na recuperação após o parto.',
+      n3: 'Para dores e lesões nas costas, pescoço, ombros, joelhos e pés, com tratamento e exercícios adaptados a si.',
+      n4: 'Também para queixas da anca e do joelho, após uma lesão ou cirurgia, com exercícios para voltar a ganhar força e estabilidade.',
+      n5: 'Para problemas respiratórios e cardíacos, como DPOC, asma ou recuperação após uma pneumonia ou cirurgia cardíaca, com exercícios respiratórios e treino adaptado.',
+      photoSoon: 'Foto em breve',
+      aboutTitle: 'Sobre',
+      about1: 'O meu nome é Rebecca Taillieu. Estudei fisioterapia na KU Leuven, onde também me especializei em fisioterapia cardiorrespiratória. Depois comecei a trabalhar no hospital psiquiátrico Sint-Kamillus, em Bierbeek, onde trabalho há seis anos.',
+      about2a: 'Para ajudar ainda melhor os meus pacientes, estou também a fazer a formação em fasciaterapia no ',
+      about2b: ': uma abordagem manual suave e profunda.',
+      about3: 'No meu consultório junto as duas. Tenho tempo para ouvir e perceber de onde vem a sua dor e, juntos, construímos um plano adaptado ao seu corpo, ao seu ritmo e aos seus objetivos, com exercícios práticos que também pode fazer em casa.',
+      hours: 'Segunda e quarta-feira, 08:00 – 20:00',
+      altHero: 'Rebecca coloca as mãos na barriga de uma paciente grávida',
+      altS1: 'Rebecca trata o ombro de uma paciente',
+      altS2: 'Rebecca acompanha uma paciente sentada numa bola de exercício',
+      altS3: 'Rebecca trata o joelho e a anca de uma paciente',
+      altS3b: 'Rebecca trata o pé de um paciente',
+      altS5: 'Canto de exercícios do consultório com step, bandas elásticas e bolas',
+      altPortrait: 'Retrato de Rebecca Taillieu no seu consultório'
     }
   };
 
@@ -310,7 +376,7 @@
   var CARDS = [
     { src: 'images/fascia-shoulder.jpg', alt: 'altS1', pos: 'center 45%', label: 's1', note: 'n1' },
     { src: 'images/pregnancy-pelvis-ball.jpg', alt: 'altS2', pos: 'center 40%', label: 's2', note: 'n2' },
-    { src: 'images/physio-knee-hip.jpg', alt: 'altS3', pos: '45% 50%', label: 's3', note: 'n3' },
+    { src: 'images/cardio-exercise-corner.jpg', alt: 'altS5', pos: 'center 60%', label: 's5', note: 'n5' },
     { src: 'images/physio-foot.jpg', alt: 'altS3b', pos: 'center 55%', label: 's3', note: 'n3' }
   ];
 
@@ -346,8 +412,14 @@
     CARDS.slice(start, start + n).forEach(function (c) {
       var li = document.createElement('li');
       li.className = 'card';
-      var img = document.createElement('img');
-      img.src = c.src; img.alt = t(c.alt); img.loading = 'lazy'; img.style.objectPosition = c.pos;
+      var img;
+      if (c.src) {
+        img = document.createElement('img');
+        img.src = c.src; img.alt = t(c.alt); img.loading = 'lazy'; img.style.objectPosition = c.pos;
+      } else {
+        img = document.createElement('div');
+        img.className = 'photo-soon'; img.textContent = t('photoSoon');
+      }
       var a = document.createElement('a');
       a.className = 'pill'; a.href = '#contact'; a.textContent = t(c.label);
       var p = document.createElement('p');
@@ -371,7 +443,6 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-i18n-alt')); });
     document.querySelectorAll('[data-i18n-label]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-label'))); });
-    document.querySelectorAll('[data-mail]').forEach(function (el) { el.href = 'mailto:rebecca@kinememling.be?subject=' + encodeURIComponent(t('mailSubject')); });
     document.getElementById('lang-current').textContent = lang.toUpperCase();
     document.querySelectorAll('#lang-list [data-lang]').forEach(function (b) { b.setAttribute('aria-checked', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
     renderCards();
