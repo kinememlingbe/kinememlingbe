@@ -1,94 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kine Memling - Rebecca Taillieu</title>
-    <style>
-        /* --- 1. Define Colors & Fonts --- */
-        :root {
-            --bg-beige: #FFF1E0;     /* The main page background color */
-            --box-border: #1B1537;   /* The dark navy blue */
-            --text-navy: #1B1537;
-            --font-main: 'Times New Roman', Times, serif; /* Classic Serif font */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse</title>
+<meta name="description" content="Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse. Fasciatherapie, begeleiding tijdens zwangerschap en algemene kinesitherapie.">
+<style>
+  :root {
+    --navy: #1B1537;
+    --cream: #FFF1E0;
+    --light: #FAF6F0;
+    --line: #4a4170;
+    --font: 'Times New Roman', Times, serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--light); color: var(--navy); font-family: var(--font); }
+  a { color: var(--navy); }
+  a:hover { color: #5a4f8a; }
+  img { display: block; max-width: 100%; }
+  .page { max-width: 1440px; margin: 0 auto; background: var(--light); }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: var(--bg-beige);
-            font-family: var(--font-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  /* Logo */
+  .logo { display: inline-flex; border: 2px solid var(--navy); background: var(--cream); white-space: nowrap; text-decoration: none; color: var(--navy); }
+  .logo span { padding: 6px 16px; font-size: 1.3rem; letter-spacing: 1px; }
+  .logo span:first-child { background: var(--navy); color: var(--cream); }
 
-        /* --- 2. The Main Logo Wrapper --- */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end; /* Aligns "Rebecca Taillieu" to the right */
-            width: fit-content;
-        }
+  /* Header */
+  .site-header { position: relative; z-index: 5; background: var(--light); display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding: 20px 48px; }
+  .nav { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+  .nav a { text-decoration: none; }
 
-        /* --- 3. The Rectangular Box --- */
-        .logo-box {
-            display: flex;
-            border: 3px solid var(--box-border);
-            /* Ensure the text stays on one line */
-            white-space: nowrap; 
-        }
+  /* Language menu */
+  .lang-menu { position: relative; }
+  .lang-btn { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 0 12px; background: transparent; border: 1px solid var(--navy); border-radius: 999px; color: var(--navy); font: inherit; font-size: 0.85rem; letter-spacing: 1px; cursor: pointer; }
+  .lang-btn .chev { transition: transform .2s; }
+  .lang-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+  .lang-btn:focus-visible, .lang-list button:focus-visible, .arrow:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .lang-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; list-style: none; margin: 0; padding: 6px; min-width: 170px; background: var(--light); border: 1px solid var(--navy); border-radius: 8px; box-shadow: 0 14px 30px -12px rgba(27,21,55,.35); text-transform: none; letter-spacing: 0; }
+  .lang-list button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 44px; padding: 0 12px; background: transparent; border: 0; border-radius: 5px; color: var(--navy); font: inherit; font-size: 1rem; cursor: pointer; text-align: left; }
+  .lang-list button:hover { background: var(--cream); }
+  .lang-list button[aria-checked="true"] { font-weight: bold; }
+  .lang-list button[aria-checked="true"]::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--navy); }
 
-        /* --- 4. Left Side (Dark Box) --- */
-        .box-left {
-            background-color: var(--box-border); /* Solid navy fill */
-            color: var(--bg-beige); /* Beige text */
-            padding: 15px 30px;
-            font-size: 3rem; /* Adjust size here */
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+  /* Hero */
+  .hero { position: relative; min-height: 680px; display: flex; align-items: center; padding: 64px 64px 210px; overflow: hidden; background: #d9c9b2; }
+  .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+  .hero-card { position: relative; max-width: 560px; background: rgba(255,241,224,.92); padding: 36px 40px; display: flex; flex-direction: column; gap: 16px; }
+  .hero-card h1 { margin: 0; font-size: 3.2rem; line-height: 1.05; font-weight: normal; }
+  .hero-role { font-size: 1.25rem; line-height: 1.4; }
+  .hero-lede { font-size: 1.05rem; line-height: 1.6; margin: 0; }
+  .wave { position: absolute; left: 0; bottom: -1px; width: 100%; height: 180px; display: block; }
 
-        /* --- 5. Right Side (Light Box) --- */
-        .box-right {
-            background-color: transparent;
-            color: var(--text-navy); /* Navy text */
-            padding: 15px 30px;
-            font-size: 3rem; /* Same size as left */
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+  .btn { align-self: flex-start; text-decoration: none; background: var(--navy); color: var(--cream); padding: 12px 26px; border-radius: 999px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+  .btn:hover { color: var(--cream); opacity: .9; }
 
-        /* --- 6. Subtitle (Name) --- */
-        .subtitle {
-            margin-top: 10px;
-            color: var(--text-navy);
-            font-size: 1.2rem;
-        }
-        
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 600px) {
-            .box-left, .box-right {
-                font-size: 1.8rem; /* Smaller text on phones */
-                padding: 10px 20px;
-            }
-            .subtitle {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+  /* Care */
+  .care { background: var(--navy); color: var(--cream); padding: 24px 64px 96px; display: flex; flex-direction: column; align-items: center; gap: 48px; }
+  .care h2 { margin: 0; font-size: 2.2rem; font-weight: normal; text-align: center; }
+  .cards { width: 100%; max-width: 1320px; display: grid; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .card { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  .card img { width: 100%; height: 440px; object-fit: cover; }
+  .pill { text-decoration: none; background: var(--cream); color: var(--navy); padding: 10px 22px; border-radius: 999px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  .pill:hover { color: var(--navy); opacity: .9; }
+  .card p { margin: 0; font-size: 1.05rem; line-height: 1.55; text-align: center; max-width: 320px; }
+  .card-nav { display: flex; align-items: center; gap: 20px; }
+  .card-nav[hidden] { display: none; }
+  .arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--cream); background: transparent; color: var(--cream); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .arrow:disabled { opacity: .35; cursor: default; }
+  .card-count { font-size: 0.95rem; letter-spacing: 1px; min-width: 64px; text-align: center; }
+
+  /* About */
+  .about { background: var(--light); padding: 88px 64px; display: flex; flex-wrap: wrap; flex-direction: row-reverse; justify-content: center; gap: 48px; align-items: center; }
+  .about img { flex: 1 1 320px; max-width: 440px; height: 480px; object-fit: cover; object-position: center 35%; border-radius: 220px 220px 0 0; min-width: 0; }
+  .about-text { flex: 1.4 1 420px; display: flex; flex-direction: column; gap: 16px; }
+  .about-text h2 { margin: 0; font-size: 2.2rem; font-weight: normal; }
+  .about-text p { margin: 0; font-size: 1.15rem; line-height: 1.65; }
+  .about-text a:not(.btn) { text-underline-offset: 3px; }
+
+  /* Footer */
+  .site-footer { background: var(--navy); color: var(--cream); padding: 32px 64px; display: flex; flex-direction: column; gap: 20px; }
+  .footer-row { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
+  .site-footer .logo { border-color: var(--cream); }
+  .site-footer .logo span { padding: 4px 12px; font-size: 1rem; }
+  .footer-info { display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 0.95rem; line-height: 1.5; font-style: normal; }
+  .footer-info a { color: var(--cream); text-underline-offset: 3px; }
+  .copyright { border-top: 1px solid var(--line); padding-top: 14px; font-size: 0.8rem; letter-spacing: .5px; }
+
+  @media (max-width: 700px) {
+    .site-header, .care, .about, .site-footer { padding-left: 20px; padding-right: 20px; }
+    .hero { padding: 40px 20px 170px; min-height: 600px; }
+    .hero-card { padding: 28px 24px; }
+    .hero-card h1 { font-size: 2.4rem; }
+    .card img { height: 400px; }
+    .about-text { flex-basis: 100%; }
+    .about img { height: 420px; }
+  }
+</style>
 </head>
 <body>
+<div class="page">
 
-    <div class="logo-container">
-        <div class="logo-box">
-            <div class="box-left">KINE</div>
-            <div class="box-right">MEMLING</div>
-        </div>
-        
-        <div class="subtitle">Rebecca Taillieu</div>
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="#about" data-i18n="navAbout">Over Rebecca</a>
+      <a href="#care" data-i18n="navCare">Behandelingen</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <div class="lang-menu">
+        <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list" data-i18n-label="langLabel" aria-label="Taal">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
+          <span id="lang-current">NL</span>
+          <svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>
+        </button>
+        <ul class="lang-list" id="lang-list" role="menu" hidden>
+          <li role="none"><button type="button" role="menuitemradio" data-lang="nl" lang="nl" aria-checked="true">Nederlands</button></li>
+          <li role="none"><button type="button" role="menuitemradio" data-lang="fr" lang="fr" aria-checked="false">Français</button></li>
+          <li role="none"><button type="button" role="menuitemradio" data-lang="en" lang="en" aria-checked="false">English</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <img src="images/hero-pregnancy.jpg" width="2000" height="1333" data-i18n-alt="altHero" alt="Rebecca legt haar handen op de buik van een zwangere patiënte" fetchpriority="high">
+      <div class="hero-card">
+        <h1 data-i18n="heroTitle">Maak kennis met Rebecca</h1>
+        <div class="hero-role" data-i18n="heroRole">Kinesitherapeute | In specialisatie fasciatherapie</div>
+        <p class="hero-lede" data-i18n="heroLede">Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.</p>
+        <a class="btn" href="#contact" data-i18n="cta">Maak een afspraak</a>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C220,190 470,175 720,120 C980,62 1210,20 1440,48 L1440,180 L0,180 Z" fill="#1B1537"/></svg>
+    </section>
+
+    <section id="care" class="care" aria-labelledby="care-title">
+      <h2 id="care-title" data-i18n="careTitle">Waarvoor je bij Rebecca terechtkunt</h2>
+      <ul class="cards" id="cards"></ul>
+      <div class="card-nav" id="card-nav" hidden>
+        <button type="button" class="arrow" id="prev" data-i18n-label="prev" aria-label="Vorige">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="card-count" id="card-count" aria-live="polite"></div>
+        <button type="button" class="arrow" id="next" data-i18n-label="next" aria-label="Volgende">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-title">
+      <img src="images/rebecca-portrait.jpg" width="800" height="1200" loading="lazy" data-i18n-alt="altPortrait" alt="Portret van Rebecca Taillieu in haar praktijk">
+      <div class="about-text">
+        <h2 id="about-title" data-i18n="aboutTitle">Over</h2>
+        <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Na mijn opleiding kinesitherapie aan de KU Leuven ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
+        <p><span data-i18n="about2a">Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij </span><a href="https://fascia.be/" target="_blank" rel="noopener">Fascia College</a><span data-i18n="about2b">: een zachte en diepgaande manuele benadering.</span></p>
+        <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.</p>
+        <a class="btn" href="#contact" data-i18n="cta">Maak een afspraak</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-row">
+      <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
+      <address class="footer-info">
+        <span>Memlingdreef 51, 3090 Overijse</span>
+        <span data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</span>
+        <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
+      </address>
     </div>
+    <div class="copyright">© Kine Memling · Rebecca Taillieu</div>
+  </footer>
 
+</div>
+
+<script>
+(function () {
+  var I18N = {
+    nl: {
+      title: 'Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse',
+      description: 'Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse. Fasciatherapie, begeleiding tijdens zwangerschap en algemene kinesitherapie.',
+      navHome: 'Home', navAbout: 'Over Rebecca', navCare: 'Behandelingen', navContact: 'Contact', langLabel: 'Taal', prev: 'Vorige', next: 'Volgende',
+      heroTitle: 'Maak kennis met Rebecca',
+      heroRole: 'Kinesitherapeute | In specialisatie fasciatherapie',
+      heroLede: 'Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.',
+      cta: 'Maak een afspraak',
+      careTitle: 'Waarvoor je bij Rebecca terechtkunt',
+      s1: 'Fasciatherapie', s2: 'Zwangerschap & bekken', s3: 'Algemene kinesitherapie',
+      n1: 'Een zachte manuele therapie op het bindweefsel (fascia). Kan helpen bij aanhoudende spanning, pijn en stress.',
+      n2: 'Begeleiding bij rug- en bekkenklachten tijdens de zwangerschap en bij het herstel na de bevalling.',
+      n3: 'Voor pijn en blessures aan rug, nek, schouders, knieën en voeten, met behandeling en oefeningen op maat.',
+      aboutTitle: 'Over',
+      about1: 'Mijn naam is Rebecca Taillieu. Na mijn opleiding kinesitherapie aan de KU Leuven ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.',
+      about2a: 'Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij ',
+      about2b: ': een zachte en diepgaande manuele benadering.',
+      about3: 'In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.',
+      hours: 'Maandag en woensdag, 08:00 – 20:00',
+      altHero: 'Rebecca legt haar handen op de buik van een zwangere patiënte',
+      altS1: 'Rebecca behandelt de schouder van een patiënte met fasciatherapie',
+      altS2: 'Rebecca begeleidt een patiënte op een oefenbal',
+      altS3: 'Rebecca behandelt de knie en heup van een patiënte',
+      altS3b: 'Rebecca behandelt de voet van een patiënt',
+      altPortrait: 'Portret van Rebecca Taillieu in haar praktijk'
+    },
+    fr: {
+      title: 'Kine Memling – Rebecca Taillieu, kinésithérapeute à Overijse',
+      description: 'Kine Memling – Rebecca Taillieu, kinésithérapeute à Overijse. Fasciathérapie, accompagnement de la grossesse et kinésithérapie générale.',
+      navHome: 'Accueil', navAbout: 'À propos', navCare: 'Soins', navContact: 'Contact', langLabel: 'Langue', prev: 'Précédent', next: 'Suivant',
+      heroTitle: 'Rencontrez Rebecca',
+      heroRole: 'Kinésithérapeute | En spécialisation en fasciathérapie',
+      heroLede: 'Un accompagnement personnalisé dans un cabinet calme, avec le temps de vous écouter et de vous proposer un traitement adapté à vos besoins.',
+      cta: 'Prendre rendez-vous',
+      careTitle: 'Comment Rebecca peut vous aider',
+      s1: 'Fasciathérapie', s2: 'Grossesse & bassin', s3: 'Kinésithérapie générale',
+      n1: 'Une thérapie manuelle douce qui agit sur les fascias. Elle peut aider en cas de tensions, de douleurs persistantes et de stress.',
+      n2: 'Un accompagnement des douleurs du dos et du bassin pendant la grossesse et pour la récupération après l’accouchement.',
+      n3: 'Pour les douleurs et blessures du dos, de la nuque, des épaules, des genoux et des pieds, avec un traitement et des exercices sur mesure.',
+      aboutTitle: 'À propos',
+      about1: 'Je m’appelle Rebecca Taillieu. Après mes études de kinésithérapie à la KU Leuven, j’ai commencé à travailler à l’hôpital psychiatrique Sint-Kamillus à Bierbeek, où j’exerce depuis six ans.',
+      about2a: 'Pour aider encore mieux mes patients, je suis en parallèle la formation en fasciathérapie au ',
+      about2b: ' : une approche manuelle douce et profonde.',
+      about3: 'Dans mon cabinet, je réunis les deux. Je prends le temps de vous écouter et de comprendre l’origine de votre douleur, puis nous construisons ensemble un plan adapté à votre corps, à votre rythme et à vos objectifs, avec des exercices simples à refaire chez vous.',
+      hours: 'Lundi et mercredi, 08h00 – 20h00',
+      altHero: 'Rebecca pose les mains sur le ventre d’une patiente enceinte',
+      altS1: 'Rebecca traite l’épaule d’une patiente',
+      altS2: 'Rebecca accompagne une patiente assise sur un ballon',
+      altS3: 'Rebecca traite le genou et la hanche d’une patiente',
+      altS3b: 'Rebecca traite le pied d’un patient',
+      altPortrait: 'Portrait de Rebecca Taillieu dans son cabinet'
+    },
+    en: {
+      title: 'Kine Memling – Rebecca Taillieu, physiotherapist in Overijse',
+      description: 'Kine Memling – Rebecca Taillieu, physiotherapist in Overijse. Fasciatherapy, support during pregnancy and general physiotherapy.',
+      navHome: 'Home', navAbout: 'About', navCare: 'Care', navContact: 'Contact', langLabel: 'Language', prev: 'Previous', next: 'Next',
+      heroTitle: 'Meet Rebecca',
+      heroRole: 'Physiotherapist | Specialising in fasciatherapy',
+      heroLede: 'Personal care in a calm practice, with time to listen to you and propose a treatment that fits your needs.',
+      cta: 'Book a session',
+      careTitle: 'How Rebecca can help',
+      s1: 'Fasciatherapy', s2: 'Pregnancy & pelvis', s3: 'General physiotherapy',
+      n1: 'A gentle manual therapy that works on the connective tissue (fascia). It can help with lasting tension, pain and stress.',
+      n2: 'Support for back and pelvic complaints during pregnancy and with recovery after giving birth.',
+      n3: 'For pain and injuries in the back, neck, shoulders, knees and feet, with treatment and exercises tailored to you.',
+      aboutTitle: 'About',
+      about1: 'My name is Rebecca Taillieu. After studying physiotherapy at KU Leuven, I started working at Sint-Kamillus psychiatric hospital in Bierbeek, where I have now been for six years.',
+      about2a: 'To help my patients even better, I am also training in fasciatherapy at ',
+      about2b: ': a gentle and in-depth manual approach.',
+      about3: 'In my practice I bring the two together. I take the time to listen and to understand where your pain comes from, and together we build a plan that suits your body, your pace and your goals, with practical exercises you can also do at home.',
+      hours: 'Mondays and Wednesdays, 08:00 – 20:00',
+      altHero: 'Rebecca placing her hands on a pregnant patient’s belly',
+      altS1: 'Rebecca treating a patient’s shoulder',
+      altS2: 'Rebecca guiding a patient seated on an exercise ball',
+      altS3: 'Rebecca treating a patient’s knee and hip',
+      altS3b: 'Rebecca treating a patient’s foot',
+      altPortrait: 'Portrait of Rebecca Taillieu in her practice'
+    }
+  };
+
+  // Service cards: add a new photo here and it joins the row (arrows appear when needed).
+  var CARDS = [
+    { src: 'images/fascia-shoulder.jpg', alt: 'altS1', pos: 'center 45%', label: 's1', note: 'n1' },
+    { src: 'images/pregnancy-pelvis-ball.jpg', alt: 'altS2', pos: 'center 40%', label: 's2', note: 'n2' },
+    { src: 'images/physio-knee-hip.jpg', alt: 'altS3', pos: '45% 50%', label: 's3', note: 'n3' },
+    { src: 'images/physio-foot.jpg', alt: 'altS3b', pos: 'center 55%', label: 's3', note: 'n3' }
+  ];
+
+  var STORAGE_KEY = 'km-lang';
+  var DEFAULT_LANG = 'nl';
+  var lang = DEFAULT_LANG;
+  var start = 0;
+
+  function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N[DEFAULT_LANG][key] || ''; }
+
+  function detectLang() {
+    try { var saved = localStorage.getItem(STORAGE_KEY); if (I18N[saved]) return saved; } catch (e) {}
+    var list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || DEFAULT_LANG];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().slice(0, 2);
+      if (I18N[code]) return code;
+    }
+    return DEFAULT_LANG;
+  }
+
+  function perPage() {
+    var w = window.innerWidth;
+    return w >= 1200 ? 4 : w >= 900 ? 3 : w >= 600 ? 2 : 1;
+  }
+
+  function renderCards() {
+    var n = Math.min(perPage(), CARDS.length);
+    var maxStart = Math.max(0, CARDS.length - n);
+    if (start > maxStart) start = maxStart;
+    var ul = document.getElementById('cards');
+    ul.style.gridTemplateColumns = 'repeat(' + n + ', minmax(0, 1fr))';
+    ul.innerHTML = '';
+    CARDS.slice(start, start + n).forEach(function (c) {
+      var li = document.createElement('li');
+      li.className = 'card';
+      var img = document.createElement('img');
+      img.src = c.src; img.alt = t(c.alt); img.loading = 'lazy'; img.style.objectPosition = c.pos;
+      var a = document.createElement('a');
+      a.className = 'pill'; a.href = '#contact'; a.textContent = t(c.label);
+      var p = document.createElement('p');
+      p.textContent = t(c.note);
+      li.appendChild(img); li.appendChild(a); li.appendChild(p);
+      ul.appendChild(li);
+    });
+    var nav = document.getElementById('card-nav');
+    nav.hidden = CARDS.length <= n;
+    document.getElementById('prev').disabled = start === 0;
+    document.getElementById('next').disabled = start >= maxStart;
+    document.getElementById('card-count').textContent = (n === 1 ? (start + 1) : (start + 1) + '–' + (start + n)) + ' / ' + CARDS.length;
+  }
+
+  function setLang(code, remember) {
+    lang = I18N[code] ? code : DEFAULT_LANG;
+    document.documentElement.lang = lang;
+    document.title = t('title');
+    var meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', t('description'));
+    document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-i18n-alt')); });
+    document.querySelectorAll('[data-i18n-label]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-label'))); });
+    document.getElementById('lang-current').textContent = lang.toUpperCase();
+    document.querySelectorAll('#lang-list [data-lang]').forEach(function (b) { b.setAttribute('aria-checked', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+    renderCards();
+    if (remember) { try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {} }
+  }
+
+  // Language menu
+  var btn = document.getElementById('lang-btn');
+  var list = document.getElementById('lang-list');
+  function openMenu(open) {
+    list.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) { var cur = list.querySelector('[aria-checked="true"]'); if (cur) cur.focus(); }
+  }
+  btn.addEventListener('click', function () { openMenu(list.hidden); });
+  list.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-lang]');
+    if (!b) return;
+    setLang(b.getAttribute('data-lang'), true);
+    openMenu(false); btn.focus();
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.lang-menu')) openMenu(false); });
+  list.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { openMenu(false); btn.focus(); }
+  });
+
+  // Service arrows
+  document.getElementById('prev').addEventListener('click', function () { start = Math.max(0, start - 1); renderCards(); });
+  document.getElementById('next').addEventListener('click', function () { start = start + 1; renderCards(); });
+  var resizeTimer;
+  window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(renderCards, 120); });
+
+  setLang(detectLang(), false);
+})();
+</script>
 </body>
 </html>
