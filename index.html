@@ -130,7 +130,7 @@
         <h1 data-i18n="heroTitle">Maak kennis met Rebecca</h1>
         <div class="hero-role" data-i18n="heroRole">Kinesitherapeute | In specialisatie fasciatherapie</div>
         <p class="hero-lede" data-i18n="heroLede">Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.</p>
-        <a class="btn" href="#contact" data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
       </div>
       <svg class="wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C220,190 470,175 720,120 C980,62 1210,20 1440,48 L1440,180 L0,180 Z" fill="#1B1537"/></svg>
     </section>
@@ -156,7 +156,7 @@
         <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Na mijn opleiding kinesitherapie aan de KU Leuven ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
         <p><span data-i18n="about2a">Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij </span><a href="https://fascia.be/" target="_blank" rel="noopener">Fascia College</a><span data-i18n="about2b">: een zachte en diepgaande manuele benadering.</span></p>
         <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.</p>
-        <a class="btn" href="#contact" data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
       </div>
     </section>
   </main>
@@ -181,7 +181,7 @@
     nl: {
       title: 'Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse',
       description: 'Kine Memling – Rebecca Taillieu, kinesitherapeute in Overijse. Fasciatherapie, begeleiding tijdens zwangerschap en algemene kinesitherapie.',
-      navHome: 'Home', navAbout: 'Over Rebecca', navCare: 'Behandelingen', navContact: 'Contact', langLabel: 'Taal', prev: 'Vorige', next: 'Volgende',
+      navHome: 'Home', navAbout: 'Over Rebecca', navCare: 'Behandelingen', navContact: 'Contact', langLabel: 'Taal', mailSubject: 'Afspraak bij Kine Memling', prev: 'Vorige', next: 'Volgende',
       heroTitle: 'Maak kennis met Rebecca',
       heroRole: 'Kinesitherapeute | In specialisatie fasciatherapie',
       heroLede: 'Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.',
@@ -207,7 +207,7 @@
     fr: {
       title: 'Kine Memling – Rebecca Taillieu, kinésithérapeute à Overijse',
       description: 'Kine Memling – Rebecca Taillieu, kinésithérapeute à Overijse. Fasciathérapie, accompagnement de la grossesse et kinésithérapie générale.',
-      navHome: 'Accueil', navAbout: 'À propos', navCare: 'Soins', navContact: 'Contact', langLabel: 'Langue', prev: 'Précédent', next: 'Suivant',
+      navHome: 'Accueil', navAbout: 'À propos', navCare: 'Soins', navContact: 'Contact', langLabel: 'Langue', mailSubject: 'Rendez-vous chez Kine Memling', prev: 'Précédent', next: 'Suivant',
       heroTitle: 'Rencontrez Rebecca',
       heroRole: 'Kinésithérapeute | En spécialisation en fasciathérapie',
       heroLede: 'Un accompagnement personnalisé dans un cabinet calme, avec le temps de vous écouter et de vous proposer un traitement adapté à vos besoins.',
@@ -233,7 +233,7 @@
     en: {
       title: 'Kine Memling – Rebecca Taillieu, physiotherapist in Overijse',
       description: 'Kine Memling – Rebecca Taillieu, physiotherapist in Overijse. Fasciatherapy, support during pregnancy and general physiotherapy.',
-      navHome: 'Home', navAbout: 'About', navCare: 'Care', navContact: 'Contact', langLabel: 'Language', prev: 'Previous', next: 'Next',
+      navHome: 'Home', navAbout: 'About', navCare: 'Care', navContact: 'Contact', langLabel: 'Language', mailSubject: 'Appointment at Kine Memling', prev: 'Previous', next: 'Next',
       heroTitle: 'Meet Rebecca',
       heroRole: 'Physiotherapist | Specialising in fasciatherapy',
       heroLede: 'Personal care in a calm practice, with time to listen to you and propose a treatment that fits your needs.',
@@ -323,6 +323,7 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-i18n-alt')); });
     document.querySelectorAll('[data-i18n-label]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-label'))); });
+    document.querySelectorAll('[data-mail]').forEach(function (el) { el.href = 'mailto:rebecca@kinememling.be?subject=' + encodeURIComponent(t('mailSubject')); });
     document.getElementById('lang-current').textContent = lang.toUpperCase();
     document.querySelectorAll('#lang-list [data-lang]').forEach(function (b) { b.setAttribute('aria-checked', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
     renderCards();
