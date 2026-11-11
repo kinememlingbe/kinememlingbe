@@ -186,7 +186,7 @@
         <h1 data-i18n="heroTitle">Maak kennis met Rebecca</h1>
         <div class="hero-role" data-i18n="heroRole">Kinesitherapeute | Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
         <p class="hero-lede" data-i18n="heroLede">Persoonlijke begeleiding in een rustige praktijk, met tijd om naar je te luisteren en een behandeling voor te stellen die bij jouw noden past.</p>
-        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="tel:+32451047821" data-i18n="cta">Maak een afspraak</a>
       </div>
       <svg class="wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path d="M0,120 C220,190 470,175 720,120 C980,62 1210,20 1440,48 L1440,180 L0,180 Z" fill="#1B1537"/></svg>
     </section>
@@ -212,7 +212,7 @@
         <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Ik studeerde kinesitherapie aan de KU Leuven, waar ik me ook specialiseerde in cardiorespiratoire kinesitherapie. Daarna ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
         <p><span data-i18n="about2a">Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij </span><a href="https://fascia.be/" target="_blank" rel="noopener">Fascia College</a><span data-i18n="about2b">: een zachte en diepgaande manuele benadering.</span></p>
         <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.</p>
-        <a class="btn" href="mailto:rebecca@kinememling.be?subject=Afspraak%20bij%20Kine%20Memling" data-mail data-i18n="cta">Maak een afspraak</a>
+        <a class="btn" href="tel:+32451047821" data-i18n="cta">Maak een afspraak</a>
       </div>
     </section>
   </main>
@@ -401,7 +401,6 @@
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) { el.alt = t(el.getAttribute('data-i18n-alt')); });
     document.querySelectorAll('[data-i18n-label]').forEach(function (el) { el.setAttribute('aria-label', t(el.getAttribute('data-i18n-label'))); });
-    document.querySelectorAll('[data-mail]').forEach(function (el) { el.href = 'mailto:rebecca@kinememling.be?subject=' + encodeURIComponent(t('mailSubject')); });
     document.getElementById('lang-current').textContent = lang.toUpperCase();
     document.querySelectorAll('#lang-list [data-lang]').forEach(function (b) { b.setAttribute('aria-checked', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
     renderCards();
