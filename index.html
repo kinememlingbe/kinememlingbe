@@ -79,6 +79,7 @@
   .site-header { position: relative; z-index: 5; background: var(--cream); display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding: 20px 48px; }
   .nav { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
   .nav a { text-decoration: none; }
+  .nav-contacts { display: flex; flex-direction: column; gap: 4px; }
   .nav .nav-contact { display: inline-flex; align-items: center; gap: 6px; text-transform: none; letter-spacing: 0; font-size: 0.95rem; }
 
   /* Language menu */
@@ -157,8 +158,10 @@
       <a href="#home" data-i18n="navHome">Home</a>
       <a href="#about" data-i18n="navAbout">Over Rebecca</a>
       <a href="#care" data-i18n="navCare">Behandelingen</a>
+      <div class="nav-contacts">
       <a class="nav-contact" href="mailto:rebecca@kinememling.be"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>rebecca@kinememling.be</span></a>
       <a class="nav-contact" href="tel:+32451047821"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span>+32 451 04 78 21</span></a>
+      </div>
       <div class="lang-menu">
         <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list" data-i18n-label="langLabel" aria-label="Taal">
           <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
