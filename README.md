@@ -7,7 +7,7 @@ One-page website for Kine Memling, Rebecca Taillieu's physiotherapy practice in 
 
 ## Languages
 
-The site is in Dutch (default), French and English. All texts live in the `I18N` object at the bottom of `index.html`. On a first visit the language follows the browser settings and falls back to Dutch; a choice made in the language menu is remembered.
+The site is in Dutch (default), French, English and Portuguese (PT). All texts live in the `I18N` object at the bottom of `index.html`. On a first visit the language follows the browser settings and falls back to Dutch; a choice made in the language menu is remembered.
 
 ## Adding a service photo
 
