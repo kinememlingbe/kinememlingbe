@@ -50,6 +50,11 @@
     "opens": "08:00",
     "closes": "20:00"
   }],
+  "department": [{
+    "@type": "Physiotherapy",
+    "name": "Kine Memling – Permekedreef",
+    "address": { "@type": "PostalAddress", "streetAddress": "Permekedreef 6", "postalCode": "3090", "addressLocality": "Overijse", "addressCountry": "BE" }
+  }],
   "availableLanguage": ["nl", "fr", "en", "pt"],
   "knowsAbout": ["Kinesitherapie", "Fasciatherapie", "Cardiorespiratoire kinesitherapie", "Fasciathérapie", "Physiotherapy", "Pregnancy and pelvic physiotherapy"],
   "employee": {
@@ -138,12 +143,18 @@
   .about-text a:not(.btn) { text-underline-offset: 3px; }
 
   /* Footer */
-  .site-footer { background: var(--navy); color: var(--cream); padding: 32px 64px; display: flex; flex-direction: column; gap: 20px; }
-  .footer-row { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
-  .site-footer .logo { border-color: var(--cream); }
+  .site-footer { background: var(--navy); color: var(--cream); padding: 56px 64px 32px; display: flex; flex-direction: column; gap: 28px; }
+  .site-footer .logo { border-color: var(--cream); align-self: flex-start; }
   .site-footer .logo span { padding: 4px 12px; font-size: 1rem; }
-  .footer-info { display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 0.95rem; line-height: 1.5; font-style: normal; }
-  .footer-info a { color: var(--cream); text-underline-offset: 3px; }
+  .footer-title { margin: 0; font-size: 2rem; font-weight: normal; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px 40px; }
+  .location { display: flex; flex-direction: column; gap: 8px; font-style: normal; font-size: 1rem; line-height: 1.5; }
+  .location h3 { margin: 0; font-size: 1.35rem; font-weight: normal; }
+  .location p { margin: 0; }
+  .loc-note { font-style: italic; opacity: .85; }
+  .location a { color: var(--cream); text-underline-offset: 3px; }
+  .route { align-self: flex-start; margin-bottom: 8px; }
+  .map { width: 100%; height: 220px; border: 0; margin-top: auto; background: #2a2350; }
   .copyright { border-top: 1px solid var(--line); padding-top: 14px; font-size: 0.8rem; letter-spacing: .5px; }
 
   @media (max-width: 700px) {
@@ -231,14 +242,28 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
   </main>
 
   <footer id="contact" class="site-footer">
-    <div class="footer-row">
-      <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
-      <address class="footer-info">
-        <span>Memlingdreef 51, 3090 Overijse</span>
-        <span data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</span>
-        <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
-        <a href="tel:+32451047821">+32 451 04 78 21</a>
-      </address>
+    <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
+    <h2 class="footer-title" data-i18n="whereTitle">Waar vind je me?</h2>
+    <div class="footer-grid">
+        <div class="location">
+          <h3>Isabel De Keyser</h3>
+          <p>Permekedreef 6, 3090 Overijse</p>
+          <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Permekedreef+6%2C+3090+Overijse" target="_blank" rel="noopener" data-i18n="route">Route plannen</a>
+          <iframe class="map" src="https://www.google.com/maps?q=Permekedreef+6%2C+3090+Overijse&amp;output=embed" title="Permekedreef 6, 3090 Overijse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="location">
+          <h3>Kine Memling</h3>
+          <p>Memlingdreef 51, 3090 Overijse</p>
+          <p class="loc-note" data-i18n="renovation">Momenteel in renovatie</p>
+          <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Memlingdreef+51%2C+3090+Overijse" target="_blank" rel="noopener" data-i18n="route">Route plannen</a>
+          <iframe class="map" src="https://www.google.com/maps?q=Memlingdreef+51%2C+3090+Overijse&amp;output=embed" title="Memlingdreef 51, 3090 Overijse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <address class="location contact-col">
+          <h3 data-i18n="contactTitle">Contact</h3>
+          <p data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</p>
+          <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
+          <a href="tel:+32451047821">+32 451 04 78 21</a>
+        </address>
     </div>
     <div class="copyright">© Kine Memling · Rebecca Taillieu</div>
   </footer>
@@ -272,6 +297,16 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about2b: ': een zachte en diepgaande manuele benadering.',
       about3: 'In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.',
       hours: 'Maandag en woensdag, 08:00 – 20:00',
+
+      whereTitle: 'Waar vind je me?',
+
+      renovation: 'Momenteel in renovatie',
+
+      route: 'Route plannen',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Kaart',
       altHero: 'Rebecca legt haar handen op de buik van een zwangere patiënte',
       altS1: 'Rebecca behandelt de schouder van een patiënte met fasciatherapie',
       altS2: 'Rebecca begeleidt een patiënte op een oefenbal',
@@ -303,6 +338,16 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about2b: ' : une approche manuelle douce et profonde.',
       about3: 'Dans mon cabinet, je réunis les deux. Je prends le temps de vous écouter et de comprendre l’origine de votre douleur, puis nous construisons ensemble un plan adapté à votre corps, à votre rythme et à vos objectifs, avec des exercices simples à refaire chez vous.',
       hours: 'Lundi et mercredi, 08h00 – 20h00',
+
+      whereTitle: 'Où me trouver ?',
+
+      renovation: 'Actuellement en rénovation',
+
+      route: 'Itinéraire',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Carte',
       altHero: 'Rebecca pose les mains sur le ventre d’une patiente enceinte',
       altS1: 'Rebecca traite l’épaule d’une patiente',
       altS2: 'Rebecca accompagne une patiente assise sur un ballon',
@@ -334,6 +379,16 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about2b: ': a gentle and in-depth manual approach.',
       about3: 'In my practice I bring the two together. I take the time to listen and to understand where your pain comes from, and together we build a plan that suits your body, your pace and your goals, with practical exercises you can also do at home.',
       hours: 'Mondays and Wednesdays, 08:00 – 20:00',
+
+      whereTitle: 'Where to find me',
+
+      renovation: 'Currently being renovated',
+
+      route: 'Get directions',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Map',
       altHero: 'Rebecca placing her hands on a pregnant patient’s belly',
       altS1: 'Rebecca treating a patient’s shoulder',
       altS2: 'Rebecca guiding a patient seated on an exercise ball',
@@ -373,6 +428,16 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about2b: ': uma abordagem manual suave e profunda.',
       about3: 'No meu consultório junto as duas. Tenho tempo para ouvir e perceber de onde vem a sua dor e, juntos, construímos um plano adaptado ao seu corpo, ao seu ritmo e aos seus objetivos, com exercícios práticos que também pode fazer em casa.',
       hours: 'Segunda e quarta-feira, 08:00 – 20:00',
+
+      whereTitle: 'Onde me encontrar',
+
+      renovation: 'Atualmente em renovação',
+
+      route: 'Como chegar',
+
+      contactTitle: 'Contacto',
+
+      mapOf: 'Mapa',
       altHero: 'Rebecca coloca as mãos na barriga de uma paciente grávida',
       altS1: 'Rebecca trata o ombro de uma paciente',
       altS2: 'Rebecca acompanha uma paciente sentada numa bola de exercício',
