@@ -50,6 +50,11 @@
     "opens": "08:00",
     "closes": "20:00"
   }],
+  "department": [{
+    "@type": "Physiotherapy",
+    "name": "Kine Memling – Isabel De Keyser Praktijk",
+    "address": { "@type": "PostalAddress", "streetAddress": "Permekedreef 6", "postalCode": "3090", "addressLocality": "Overijse", "addressCountry": "BE" }
+  }],
   "availableLanguage": ["nl", "fr", "en", "pt"],
   "knowsAbout": ["Kinesitherapie", "Fasciatherapie", "Cardiorespiratoire kinesitherapie", "Fasciathérapie", "Physiotherapy", "Pregnancy and pelvic physiotherapy"],
   "employee": {
@@ -138,13 +143,20 @@
   .about-text a:not(.btn) { text-underline-offset: 3px; }
 
   /* Footer */
-  .site-footer { background: var(--navy); color: var(--cream); padding: 32px 64px; display: flex; flex-direction: column; gap: 20px; }
-  .footer-row { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
-  .site-footer .logo { border-color: var(--cream); }
+  .site-footer { background: var(--navy); color: var(--cream); padding: 56px 64px 32px; display: flex; flex-direction: column; gap: 28px; }
+  .site-footer .logo { border-color: var(--cream); align-self: flex-start; }
   .site-footer .logo span { padding: 4px 12px; font-size: 1rem; }
-  .footer-info { display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 0.95rem; line-height: 1.5; font-style: normal; }
-  .footer-info a { color: var(--cream); text-underline-offset: 3px; }
-  .copyright { border-top: 1px solid var(--line); padding-top: 14px; font-size: 0.8rem; letter-spacing: .5px; }
+  .footer-title { margin: 0; font-size: 2rem; font-weight: normal; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px 40px; }
+  .location { display: flex; flex-direction: column; gap: 8px; font-style: normal; font-size: 1rem; line-height: 1.5; }
+  .location h3 { margin: 0; font-size: 1.35rem; font-weight: normal; }
+  .location p { margin: 0; }
+  .loc-note { font-style: italic; opacity: .85; }
+  .location a { color: var(--cream); text-underline-offset: 3px; }
+  .map.map-off { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; background: repeating-linear-gradient(135deg,#3b3a45,#3b3a45 14px,#43424d 14px,#43424d 28px); color: #c9c6d6; font-size: .95rem; letter-spacing: 1px; text-transform: uppercase; }
+  .route { align-self: flex-start; margin-bottom: 8px; }
+  .map { width: 100%; height: 220px; border: 0; margin-top: auto; background: #2a2350; }
+  .copyright { border-top: 1px solid var(--line); padding-top: 14px; line-height: 1.7; font-size: 0.8rem; letter-spacing: .5px; }
 
   @media (max-width: 700px) {
     .site-header, .care, .about, .site-footer { padding-left: 20px; padding-right: 20px; }
@@ -167,8 +179,8 @@
       <a href="#about" data-i18n="navAbout">Over Rebecca</a>
       <a href="#care" data-i18n="navCare">Behandelingen</a>
       <div class="nav-contacts">
-      <a class="nav-contact" href="mailto:rebecca@kinememling.be"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>rebecca@kinememling.be</span></a>
       <a class="nav-contact" href="tel:+32451047821"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg><span>+32 451 04 78 21</span></a>
+      <a class="nav-contact" href="mailto:rebecca@kinememling.be"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>rebecca@kinememling.be</span></a>
       </div>
       <div class="lang-menu">
         <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list" data-i18n-label="langLabel" aria-label="Taal">
@@ -224,23 +236,36 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
         <h2 id="about-title" data-i18n="aboutTitle">Over</h2>
         <p data-i18n="about1">Mijn naam is Rebecca Taillieu. Ik studeerde kinesitherapie aan de KU Leuven, waar ik me ook specialiseerde in cardiorespiratoire kinesitherapie. Daarna ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.</p>
         <p><span data-i18n="about2a">Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij </span><a href="https://fascia.be/" target="_blank" rel="noopener">Fascia College</a><span data-i18n="about2b">: een zachte en diepgaande manuele benadering.</span></p>
-        <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.</p>
+        <p data-i18n="about3">In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen. Ik werk als niet-geconventioneerde kinesitherapeute.</p>
         <a class="btn" href="tel:+32451047821" data-i18n="cta">Maak een afspraak</a>
       </div>
     </section>
   </main>
 
   <footer id="contact" class="site-footer">
-    <div class="footer-row">
-      <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
-      <address class="footer-info">
-        <span>Memlingdreef 51, 3090 Overijse</span>
-        <span data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</span>
-        <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
-        <a href="tel:+32451047821">+32 451 04 78 21</a>
-      </address>
+    <a class="logo" href="#home" aria-label="Kine Memling"><span>KINE</span><span>MEMLING</span></a>
+    <h2 class="footer-title" data-i18n="whereTitle">Waar vind je me?</h2>
+    <div class="footer-grid">
+        <div class="location">
+          <h3>Isabel De Keyser Praktijk</h3>
+          <p>Permekedreef 6, 3090 Overijse</p>
+          <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Permekedreef+6%2C+3090+Overijse" target="_blank" rel="noopener" data-i18n="route">Route plannen</a>
+          <iframe class="map" src="https://www.google.com/maps?q=Permekedreef+6%2C+3090+Overijse&amp;output=embed" title="Permekedreef 6, 3090 Overijse" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="location">
+          <h3>Kine Memling</h3>
+          <p>Memlingdreef 51, 3090 Overijse</p>
+          <p class="loc-note" data-i18n="renovation">Momenteel in renovatie</p>
+          <div class="map map-off" role="img" aria-label="Memlingdreef 51 – kaart niet beschikbaar"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle><path d="M4 4l16 16"></path></svg><span data-i18n="mapOff">Tijdelijk gesloten</span></div>
+        </div>
+        <address class="location contact-col">
+          <h3 data-i18n="contactTitle">Contact</h3>
+          <p data-i18n="hours">Maandag en woensdag, 08:00 – 20:00</p>
+          <a href="tel:+32451047821">+32 451 04 78 21</a>
+          <a href="mailto:rebecca@kinememling.be">rebecca@kinememling.be</a>
+        </address>
     </div>
-    <div class="copyright">© Kine Memling · Rebecca Taillieu</div>
+    <div class="copyright">© Kine Memling · Rebecca Taillieu<br><span data-i18n="kboLabel">Ondernemingsnummer (KBO)</span>: 1032.437.019</div>
   </footer>
 
 </div>
@@ -270,8 +295,23 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about1: 'Mijn naam is Rebecca Taillieu. Ik studeerde kinesitherapie aan de KU Leuven, waar ik me ook specialiseerde in cardiorespiratoire kinesitherapie. Daarna ben ik aan de slag gegaan in het psychiatrisch ziekenhuis Sint-Kamillus in Bierbeek, waar ik nu al zes jaar werk.',
       about2a: 'Om mijn patiënten nog beter te helpen, volg ik daarnaast de opleiding fasciatherapie bij ',
       about2b: ': een zachte en diepgaande manuele benadering.',
-      about3: 'In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen.',
+      about3: 'In mijn praktijk breng ik beide samen. Ik neem de tijd om te luisteren en te begrijpen waar je pijn vandaan komt, en samen stellen we een plan op dat past bij jouw lichaam, je ritme en je doelen, met praktische oefeningen die je ook thuis kunt doen. Ik werk als niet-geconventioneerde kinesitherapeute.',
       hours: 'Maandag en woensdag, 08:00 – 20:00',
+
+      kboLabel: 'Ondernemingsnummer (KBO)',
+
+      whereTitle: 'Waar vind je me?',
+
+      renovation: 'Momenteel in renovatie',
+
+
+      mapOff: 'Tijdelijk gesloten',
+
+      route: 'Route plannen',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Kaart',
       altHero: 'Rebecca legt haar handen op de buik van een zwangere patiënte',
       altS1: 'Rebecca behandelt de schouder van een patiënte met fasciatherapie',
       altS2: 'Rebecca begeleidt een patiënte op een oefenbal',
@@ -301,8 +341,23 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about1: 'Je m’appelle Rebecca Taillieu. J’ai étudié la kinésithérapie à la KU Leuven, où je me suis aussi spécialisée en kinésithérapie cardiorespiratoire. J’ai ensuite commencé à travailler à l’hôpital psychiatrique Sint-Kamillus à Bierbeek, où j’exerce depuis six ans.',
       about2a: 'Pour aider encore mieux mes patients, je suis en parallèle la formation en fasciathérapie au ',
       about2b: ' : une approche manuelle douce et profonde.',
-      about3: 'Dans mon cabinet, je réunis les deux. Je prends le temps de vous écouter et de comprendre l’origine de votre douleur, puis nous construisons ensemble un plan adapté à votre corps, à votre rythme et à vos objectifs, avec des exercices simples à refaire chez vous.',
+      about3: 'Dans mon cabinet, je réunis les deux. Je prends le temps de vous écouter et de comprendre l’origine de votre douleur, puis nous construisons ensemble un plan adapté à votre corps, à votre rythme et à vos objectifs, avec des exercices simples à refaire chez vous. Je travaille comme kinésithérapeute non conventionnée.',
       hours: 'Lundi et mercredi, 08h00 – 20h00',
+
+      kboLabel: 'Numéro d’entreprise (BCE)',
+
+      whereTitle: 'Où me trouver ?',
+
+      renovation: 'Actuellement en rénovation',
+
+
+      mapOff: 'Temporairement fermé',
+
+      route: 'Itinéraire',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Carte',
       altHero: 'Rebecca pose les mains sur le ventre d’une patiente enceinte',
       altS1: 'Rebecca traite l’épaule d’une patiente',
       altS2: 'Rebecca accompagne une patiente assise sur un ballon',
@@ -332,8 +387,23 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about1: 'My name is Rebecca Taillieu. I studied physiotherapy at KU Leuven, where I also specialised in cardiorespiratory physiotherapy. I then started working at Sint-Kamillus psychiatric hospital in Bierbeek, where I have now been for six years.',
       about2a: 'To help my patients even better, I am also training in fasciatherapy at ',
       about2b: ': a gentle and in-depth manual approach.',
-      about3: 'In my practice I bring the two together. I take the time to listen and to understand where your pain comes from, and together we build a plan that suits your body, your pace and your goals, with practical exercises you can also do at home.',
+      about3: 'In my practice I bring the two together. I take the time to listen and to understand where your pain comes from, and together we build a plan that suits your body, your pace and your goals, with practical exercises you can also do at home. I work as a non-conventioned physiotherapist.',
       hours: 'Mondays and Wednesdays, 08:00 – 20:00',
+
+      kboLabel: 'Company number (KBO)',
+
+      whereTitle: 'Where to find me',
+
+      renovation: 'Currently being renovated',
+
+
+      mapOff: 'Temporarily closed',
+
+      route: 'Get directions',
+
+      contactTitle: 'Contact',
+
+      mapOf: 'Map',
       altHero: 'Rebecca placing her hands on a pregnant patient’s belly',
       altS1: 'Rebecca treating a patient’s shoulder',
       altS2: 'Rebecca guiding a patient seated on an exercise ball',
@@ -371,8 +441,23 @@ Specialisaties: Fasciatherapie en Cardiorespiratoire</div>
       about1: 'O meu nome é Rebecca Taillieu. Estudei fisioterapia na KU Leuven, onde também me especializei em fisioterapia cardiorrespiratória. Depois comecei a trabalhar no hospital psiquiátrico Sint-Kamillus, em Bierbeek, onde trabalho há seis anos.',
       about2a: 'Para ajudar ainda melhor os meus pacientes, estou também a fazer a formação em fasciaterapia no ',
       about2b: ': uma abordagem manual suave e profunda.',
-      about3: 'No meu consultório junto as duas. Tenho tempo para ouvir e perceber de onde vem a sua dor e, juntos, construímos um plano adaptado ao seu corpo, ao seu ritmo e aos seus objetivos, com exercícios práticos que também pode fazer em casa.',
+      about3: 'No meu consultório junto as duas. Tenho tempo para ouvir e perceber de onde vem a sua dor e, juntos, construímos um plano adaptado ao seu corpo, ao seu ritmo e aos seus objetivos, com exercícios práticos que também pode fazer em casa. Trabalho como fisioterapeuta não convencionada.',
       hours: 'Segunda e quarta-feira, 08:00 – 20:00',
+
+      kboLabel: 'Número de empresa (KBO)',
+
+      whereTitle: 'Onde me encontrar',
+
+      renovation: 'Atualmente em renovação',
+
+
+      mapOff: 'Temporariamente fechado',
+
+      route: 'Como chegar',
+
+      contactTitle: 'Contacto',
+
+      mapOf: 'Mapa',
       altHero: 'Rebecca coloca as mãos na barriga de uma paciente grávida',
       altS1: 'Rebecca trata o ombro de uma paciente',
       altS2: 'Rebecca acompanha uma paciente sentada numa bola de exercício',
